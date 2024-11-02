@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h2>Edit User</h2>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" id="firstName" class="form-control" [(ngModel)]="user.Firstname" name="firstName" required>
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" id="lastName" class="form-control" [(ngModel)]="user.lastName" name="lastName" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" [(ngModel)]="user.email" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="numCIN" class="form-label">Num CIN</label>
+            <input type="number" id="numCIN" class="form-control" [(ngModel)]="user.numCIN" name="numCIN" required>
+          </div>
+          <div class="mb-3">
+            <label for="Roles" class="form-label">Roles</label>
+            <input type="Roles" id="Roles" class="form-control" [(ngModel)]="user.Roles" name="Roles">
+          </div>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>

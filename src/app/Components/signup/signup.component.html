@@ -1,0 +1,77 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offert-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Sign Up</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="signUpForm" (ngSignUp)="onSignup()">
+                            <div class="form-group pt-3" >
+                                <div class="input-field" [class.error]="signUpForm.controls['FirstName'].invalid && signUpForm.controls['FirstName'].touched">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="FirstName" type="text" placeholder="Firstname">
+                                </div> 
+                            </div>
+                            <small *ngIf="signUpForm.controls['FirstName'].invalid && signUpForm.controls['FirstName'].touched" class="text-danger">Firstname is required </small>
+                            <div class="form-group pt-3" >
+                                <div class="input-field" [class.error]="signUpForm.controls['LastName'].invalid && signUpForm.controls['LastName'].touched">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="LastName" type="text" placeholder="Lastname">
+                                </div> 
+                            </div>
+                            <small *ngIf="signUpForm.controls['LastName'].invalid && signUpForm.controls['LastName'].touched" class="text-danger">Lastname is required </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['email'].invalid && signUpForm.controls['email'].touched">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="email" type="text" placeholder="Email">
+                                </div> 
+                            </div> 
+                            <small *ngIf="signUpForm.controls['email'].invalid && signUpForm.controls['email'].touched" class="text-danger">Email is required </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['Numcin'].invalid && signUpForm.controls['Numcin'].touched">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="Numcin" type="text" placeholder="NumCIN">
+                                </div> 
+                            </div>
+                            <small *ngIf="signUpForm.controls['Numcin'].invalid && signUpForm.controls['Numcin'].touched" class="text-danger">Numcin is required </small>
+                            <div class="form-group pt-3">
+                            <div class="input-field" [class.error]="signUpForm.controls['password'].invalid && signUpForm.controls['password'].touched">
+                                <span class="fa fa-lock p-2">
+                                </span>
+                                    <input formControlName="password" [type]="type" placeholder="Password">
+                                    <span (click)="hideShowPass() "class="fa {{eyeIcon}}"></span>
+                            </div>      
+                            <small *ngIf="signUpForm.controls['password'].invalid && signUpForm.controls['password'].touched" class="text-danger">
+                                Password must contain at least one uppercase letter and one symbol, and be at least 8 characters long.
+                              </small>
+                        </div>
+                        <div class="input-field" >
+                            <span class="fa fa-user p-2"></span>
+                            <input formControlName="roles" type="text" placeholder="Roles">
+                        </div> 
+                            <button type="submit" class="btn btn-primary btn-block mt-4 w-100" (click)="onSignup()">Submit</button>
+                            <div class="text-center pt-4 text-muted">
+                                Already have an account <a id="forget" routerLink="/login">Sign IN</a>
+                            </div>
+                        </form>
+                        <!--<div class="mx-3 my-2 py-2 bordert">
+                            <div class="text-center py-3">
+                                <a href="https:://www.facebook.com" target="_blank" class="px-2"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
+                                <a href="https://github.com" target="_blank" class="social-link">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+                                </a>&nbsp;&nbsp;
+                                <a href="https://www.linkedin.com" target="_blank" class="social-link">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+                                </a>
+                                
+                            </div>
+                        </div><!-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
